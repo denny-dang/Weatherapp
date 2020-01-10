@@ -2,8 +2,15 @@
   text-align: right;
 }
 
+.location {
+  text-align: left;
+}
+
 .entry {
   background-color: lightgrey;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
   padding: 10px;
-  margin: 5px;
+  margin: 1px 5px;
 }

@@ -26,10 +26,10 @@ export class CitySearch extends Component {
     return response;
   };
 
-  onChange = (event) =>
+  handleChange = (event) =>
     this.setState({ [event.target.name]: event.target.value });
 
-  onSubmit = async (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const weatherData = await this.getWeather(
       this.state.city,
@@ -39,31 +39,33 @@ export class CitySearch extends Component {
     this.setState({ city: "", country: "" });
   };
 
+  handleError(message) {}
+
   render() {
     return (
-      <Form onSubmit={this.onSubmit}>
+      <Form onSubmit={this.handleSubmit}>
         <Form.Row>
-          <Col xs sm md lg xl={6}>
+          <Col xs={6} sm={6} md={6} lg={6} xl={6}>
             <Form.Control
               type="text"
               placeholder="Input city..."
               name="city"
               value={this.state.city}
-              onChange={this.onChange}
+              onChange={this.handleChange}
               autoComplete="off"
             />
           </Col>
-          <Col xs sm md lg xl={4}>
+          <Col xs={4} sm={4} md={4} lg={4} xl={4}>
             <Form.Control
               type="text"
               placeholder="Input country..."
               name="country"
               value={this.state.country}
-              onChange={this.onChange}
+              onChange={this.handleChange}
               autoComplete="off"
             />
           </Col>
-          <Col xs sm md lg xl={2}>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}>
             <Form.Control type="submit" value="Search" />
           </Col>
         </Form.Row>

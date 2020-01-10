@@ -14,7 +14,7 @@ class App extends Component {
 
   render() {
     return (
-      <Container height={100}>
+      <Container fluid={"true"}>
         <CitySearch addLocation={this.addLocation} />
         <WeatherStack locationList={this.state.locationList} />
       </Container>
