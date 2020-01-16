@@ -1,5 +1,7 @@
 .temp {
   text-align: right;
+  font-size: xx-large;
+  padding: 20px;
 }
 
 .location {
@@ -11,6 +13,28 @@
   border-color: black;
   border-width: 1px;
   border-style: solid;
+  border-radius: 5px;
   padding: 10px;
-  margin: 1px 5px;
+  margin: 5px 0px;
+}
+
+#yesError {
+  background-color: maroon;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+#noError {
+  visibility: hidden;
+}
+
+.info {
+  padding: 20px 40px;
+}
+
+.removeButton {
+  color: white;
+  margin: 40px 0px;
 }

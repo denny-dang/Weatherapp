@@ -14,13 +14,19 @@ class App extends Component {
 
   render() {
     return (
-      <Container fluid={"true"}>
-        <CitySearch addLocation={this.addLocation} />
-        <WeatherStack locationList={this.state.locationList} />
+      <Container>
+        <CitySearch
+          addLocation={this.addLocation}
+          locationList={this.state.locationList}
+        />
+        <WeatherStack
+          locationList={this.state.locationList}
+          removeTask={this.removeTask}
+        />
       </Container>
     );
   }
-  //add new location row
+  //logic to add new location row
   addLocation = (locationData) => {
     //will not add if location already tracked in app
     for (let i = 0; i < this.state.locationIDs.length; i++) {
@@ -34,6 +40,15 @@ class App extends Component {
     this.setState({
       locationList: [...this.state.locationList, locationObject],
       locationIDs: [...this.state.locationIDs, locationData.sys.id]
+    });
+  };
+
+  removeTask = (id) => {
+    this.setState({
+      locationList: this.state.locationList.filter(
+        (location) => location[Object.keys(location)[0]].sys.id !== id
+      ),
+      locationIDs: this.state.locationIDs.filter((currid) => currid !== id)
     });
   };
 }
