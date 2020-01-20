@@ -54,7 +54,7 @@ export class CitySearch extends Component {
       //error if city/country not found
       if (weatherData.message === "city not found") {
         errorMsg =
-          "Invalid input. Either we do not records of that location or your spelling may be incorrect.";
+          "Invalid input. Either we do not have records of that location or your spelling may be incorrect.";
       } else {
         this.props.addLocation(weatherData);
       }

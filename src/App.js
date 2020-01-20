@@ -3,6 +3,7 @@ import "./App.css";
 import CitySearch from "./Components/CitySearch";
 import WeatherStack from "./Components/WeatherStack";
 import { Container } from "react-bootstrap";
+import DegreeSwitch from "./Components/DegreeSwitch";
 
 class App extends Component {
   state = {
@@ -23,6 +24,7 @@ class App extends Component {
           locationList={this.state.locationList}
           removeTask={this.removeTask}
         />
+        {/* <DegreeSwitch /> */}
       </Container>
     );
   }
